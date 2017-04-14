@@ -1,0 +1,32 @@
+<div ui-view></div>
+<div id="portal-view">
+  <header>
+    <h1>{{portal.about.name}}</h1>
+    <p>{{portal.about.description}}</p>
+    <button ui-sref="login">Logout</button>
+  </header>
+  <div class="main-content">
+    <aside>
+      <ul>
+        <li data-ng-repeat="conversation in portal.conversations"
+            data-ng-click="portal.selectConversation(conversation)"
+            data-ng-class="{'selected':portal.selectedConversation === conversation.key}">
+          {{conversation.name}}
+        </li>
+      </ul>
+    </aside>
+    <section class="conversation">
+      <div id="message-container" scroll-glue>
+        <div class="message received"
+             data-ng-repeat="message in portal.messages"
+             data-ng-class="{'sent':message.user.key === portal.userDetails.key, 'recieved':message.user.key !== portal.userDetails.key}">
+          <span>{{message.text}}</span>
+        </div>
+      </div>
+      <form class="compose-container" data-ng-show="portal.selectedConversation" data-ng-submit="portal.sendMessage(newMessage)">
+        <input type="text" placeholder="Send a Message" data-ng-model="newMessage">
+        <input type="submit" value="Send">
+      </form>
+    </section>
+  </div>
+</div>

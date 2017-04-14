@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+
+  client:
+    image: pandera-client
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9019:9019"
+      - "35729:35729"
+    volumes:
+      - ".:/src"
+    command: gulp
