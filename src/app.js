@@ -16,7 +16,8 @@
     'ngAnimate',
     'ngCookies',
     'config',
-    'luegg.directives'
+    'luegg.directives',
+    'ngTagsInput'
   ]).config([
     '$logProvider',
     '$locationProvider',

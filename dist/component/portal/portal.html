@@ -4,6 +4,7 @@
     <h1>{{portal.about.name}}</h1>
     <p>{{portal.about.description}}</p>
     <button ui-sref="login">Logout</button>
+    <button ui-sref="conversation">New Conversation</button>
   </header>
   <div class="main-content">
     <aside>
@@ -19,7 +20,7 @@
       <div id="message-container" scroll-glue>
         <div class="message received"
              data-ng-repeat="message in portal.messages"
-             data-ng-class="{'sent':message.user.key === portal.userDetails.key, 'recieved':message.user.key !== portal.userDetails.key}">
+             data-ng-class="{'sent':message.user.key === userDetails.key, 'recieved':message.user.key !== userDetails.key}">
           <span>{{message.text}}</span>
         </div>
       </div>

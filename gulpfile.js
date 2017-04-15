@@ -29,10 +29,14 @@ var js = [
   'node_modules/angular-ui-router/release/angular-ui-router.js',
   'node_modules/angular-resource/angular-resource.js',
   'node_modules/angular-cookies/angular-cookies.js',
-  'node_modules/angularjs-scroll-glue/src/scrollglue.js'
+  'node_modules/angularjs-scroll-glue/src/scrollglue.js',
+  'node_modules/ng-tags-input/build/ng-tags-input.js'
 ];
 
-var css = ['node_modules/bootstrap/dist/css/bootstrap.css'];
+var css = [
+  'node_modules/bootstrap/dist/css/bootstrap.css',
+  'node_modules/ng-tags-input/build/ng-tags-input.css'
+];
 
 // -----[ IP Address ]----------------------------------------------------------
 var ifaces = os.networkInterfaces();

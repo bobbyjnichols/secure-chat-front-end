@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var PortalController = function (PortalService, ConStore, $state, $scope) {
+  var PortalController = function (PortalService, ConStore, $state, $scope, $rootScope) {
     var self = this;
 
     this.getAbout = function () {
@@ -12,7 +12,7 @@
 
     this.getUserDetails = function () {
       PortalService.getUserDetails().then(function (user) {
-        self.userDetails = user;
+        $rootScope.userDetails = user;
       });
     };
 
@@ -27,9 +27,6 @@
       self.messages = [];
       PortalService.getMessages(conversation.key).then(function (messages) {
         self.messages = messages.content;
-        // var messageDiv = document.getElementById("message-container");
-        // console.log(messageDiv.scrollHeight);
-        // messageDiv.scrollTop = messageDiv.scrollHeight;
       });
     };
 
@@ -68,6 +65,7 @@
       'ConStore',
       '$state',
       '$scope',
+      '$rootScope',
       PortalController
     ]);
 })();
