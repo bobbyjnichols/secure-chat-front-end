@@ -17,7 +17,8 @@
     'ngCookies',
     'config',
     'luegg.directives',
-    'ngTagsInput'
+    'ngTagsInput',
+    'ngStomp'
   ]).config([
     '$logProvider',
     '$locationProvider',

@@ -5,10 +5,8 @@
     var self = this;
 
     this.login = function () {
-      $state.go('portal');
       LoginService.login(self.phone, self.password).then(function () {
-
-        console.log($state);
+        $state.go('portal');
       });
     };
 

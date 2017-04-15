@@ -4,7 +4,7 @@
 angular.module("config", [])
 
 .constant("ConStore", {
-	"version": "v0.0.0",
+	"version": "v0.0.6",
 	"showVersion": true,
 	"baseUrl": "http://localhost:9019",
 	"apiServer": "http://192.168.1.102:8081"

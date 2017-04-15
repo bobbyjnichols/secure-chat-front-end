@@ -29,8 +29,10 @@ var js = [
   'node_modules/angular-ui-router/release/angular-ui-router.js',
   'node_modules/angular-resource/angular-resource.js',
   'node_modules/angular-cookies/angular-cookies.js',
+
   'node_modules/angularjs-scroll-glue/src/scrollglue.js',
-  'node_modules/ng-tags-input/build/ng-tags-input.js'
+  'node_modules/ng-tags-input/build/ng-tags-input.js',
+  'node_modules/ng-stomp/dist/ng-stomp.min.js'
 ];
 
 var css = [
@@ -73,8 +75,8 @@ var constDebug = {
 var constDev = {
   version: 'v' + pkg.version,
   showVersion: true,
-  baseUrl: /* TODO: baseUrl -> */'',
-  apiServer: /* TODO: baseUrl -> */''
+  baseUrl: 'https://securechat.click',
+  apiServer: 'https://api.securechat.click'
 };
 
 // -----[ Tasks ]---------------------------------------------------------------
