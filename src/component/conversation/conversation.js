@@ -31,10 +31,10 @@
       query = query.toLowerCase();
       self.getUsers().then(function (users) {
         results = users.filter(function (user) {
-          return (user.firstName.toLowerCase().includes(query) ||
-                  user.lastName.toLowerCase().includes(query) ||
-                  user.email.toLowerCase().includes(query) ||
-                  user.phone.toLowerCase().includes(query)) &&
+          return ((user.firstName?user.firstName.toLowerCase().includes(query):false) ||
+                  (user.lastName? user.lastName.toLowerCase().includes(query):false) ||
+                  (user.email?user.email.toLowerCase().includes(query):false) ||
+                  (user.phone?user.phone.toLowerCase().includes(query):false)) &&
                   $rootScope.userDetails.key !== user.key;
         });
         defer.resolve(results);

@@ -4,10 +4,10 @@
 angular.module("config", [])
 
 .constant("ConStore", {
-	"version": "v0.0.6",
+	"version": "v0.1.0",
 	"showVersion": true,
-	"baseUrl": "http://localhost:9019",
-	"apiServer": "http://192.168.1.102:8081"
+	"baseUrl": "https://securechat.click",
+	"apiServer": "https://api.securechat.click"
 })
 
 ;})();

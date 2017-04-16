@@ -146,9 +146,13 @@ gulp.task('style', function () {
 });
 
 gulp.task('style:min', function () {
-  gulp.src(['src/assets/styles/main.sass', 'src/**/*.sass', '!src/**/_*.sass'])
+  var sassStream = gulp.src(['src/assets/styles/main.sass', 'src/**/*.sass', '!src/**/_*.sass'])
       .pipe(concat('style.sass'))
-      .pipe(sass())
+      .pipe(sass());
+
+  var cssStream = gulp.src(css);
+
+  return merge(cssStream, sassStream)
       .pipe(nocomments({preserve: false}))
       .pipe(concat('style.min.css'))
       .pipe(cssmin())
